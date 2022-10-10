@@ -13,7 +13,6 @@ class JavalinConfig {
             error(404) { ctx -> ctx.json("404 - Not Found") }
         }.start(7000)
         registerRoutes(app)
-
         return app
     }
 
