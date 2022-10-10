@@ -1,8 +1,8 @@
 package ie.setu.domain.repository
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.module.kotlin.readValue
 import ie.setu.domain.User
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 
 class UserDAO {
@@ -21,7 +21,35 @@ class UserDAO {
         return users.find {it.id == id}
     }
     fun save(user: User){
+        println("the user"+user)
         users.add(user)
+        print("added user "+users);
+    }
+    fun findByEmail(email: String) {
+        val regex = ".*(\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b).*"
+        val p: Pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE)
+        val m: Matcher = p.matcher(email)
+        if (m.matches()) {
+            val em: String = m.group(1)
+            print("the user name"+em)
+        }
+    }
+    fun delete(id: Int){
+        val user = users.find {it.id==id};
+        if(user!==null){
+            users.remove(user);
+            println("deleted user "+user)
+        }
+        else print("user not found") ;
+    }
+    fun update(id: Int, newuser: User){
+        var user = users.find {it.id==id};
+        if(user!==null){
+            users.remove(user);
+            users.add(newuser)
+            print("added new user"+users)
+        }
+        else print("user not found") ;
     }
 
 }
