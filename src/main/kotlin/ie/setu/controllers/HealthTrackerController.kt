@@ -32,7 +32,10 @@ object HealthTrackerController {
         ctx.json(user)
     }
     fun getUserByEmail(ctx: Context){
-        userDao.findByEmail(ctx.pathParam("email"))
+        val user = userDao.findByEmail(ctx.pathParam("email"))
+        if (user != null) {
+            ctx.json(user)
+        }
     }
     fun deleteUser(ctx: Context){
         print("hello::::");

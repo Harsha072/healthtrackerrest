@@ -25,14 +25,8 @@ class UserDAO {
         users.add(user)
         print("added user "+users);
     }
-    fun findByEmail(email: String) {
-        val regex = ".*(\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b).*"
-        val p: Pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE)
-        val m: Matcher = p.matcher(email)
-        if (m.matches()) {
-            val em: String = m.group(1)
-            print("the user name"+em)
-        }
+    fun findByEmail(email: String): User? {
+        return users.find { it.email == email }
     }
     fun delete(id: Int){
         val user = users.find {it.id==id};
