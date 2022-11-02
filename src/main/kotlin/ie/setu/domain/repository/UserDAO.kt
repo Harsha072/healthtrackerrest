@@ -1,27 +1,68 @@
 package ie.setu.domain.repository
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.module.kotlin.readValue
 import ie.setu.domain.User
+import ie.setu.domain.db.Users
+import ie.setu.utils.mapToUser
+import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.transactions.transaction
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 
 class UserDAO {
 
-    private val users = arrayListOf<User>(
-        User(name = "harsh", email = "harsha@gmail.com", id = 0),
-        User(name = "Ben", email = "ben@gamil.ie", id = 1),
-        User(name = "anitha", email = "ani@google.com", id = 2),
-        User(name = "anil", email = "anil@singer.com", id = 3)
-    )
 
     fun getAll() : ArrayList<User>{
-        return users
+        val userList: ArrayList<User> = arrayListOf()
+        transaction {
+            Users.selectAll().map {
+                userList.add(mapToUser(it)) }
+        }
+        return userList
     }
+
     fun findById(id: Int): User?{
-        return users.find {it.id == id}
+        return transaction {
+            Users.select() {
+                Users.id eq id}
+                .map{mapToUser(it)}
+                .firstOrNull()
+        }
     }
-    fun save(user: User){
-        users.add(user)
+
+    fun save(user: User) : Int?{
+        return transaction {
+            Users.insert {
+                it[name] = user.name
+                it[email] = user.email
+            } get Users.id
+        }
+    }
+
+    fun findByEmail(email: String) :User?{
+        return transaction {
+            Users.select() {
+                Users.email eq email}
+                .map{mapToUser(it)}
+                .firstOrNull()
+        }
+    }
+
+    fun delete(id: Int):Int {
+        return transaction{ Users.deleteWhere{
+            Users.id eq id
+        }
+        }
+    }
+
+    fun update(id: Int, user: User): Int{
+        return transaction {
+            Users.update ({
+                Users.id eq id}) {
+                it[name] = user.name
+                it[email] = user.email
+            }
+        }
     }
 
 }
