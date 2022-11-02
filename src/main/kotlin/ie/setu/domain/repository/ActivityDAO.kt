@@ -41,16 +41,16 @@ class ActivityDAO {
     }
 
     //Save an activity to the database
-    fun save(activity: Activity){
-        transaction {
+    fun save(activity: Activity):Int{
+        return transaction {
             Activities.insert {
                 it[description] = activity.description
                 it[duration] = activity.duration
-                it[started] = activity.started
                 it[calories] = activity.calories
+                it[started] = activity.started
                 it[userId] = activity.userId
             }
-        }
+        } get Activities.id
     }
     //delete activity based on user id
     fun deleteActivityByUserId(userId: Int){

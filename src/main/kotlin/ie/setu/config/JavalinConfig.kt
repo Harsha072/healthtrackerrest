@@ -1,8 +1,10 @@
 package ie.setu.config
 
 import ie.setu.controllers.HealthTrackerController
+import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
 import io.javalin.apibuilder.ApiBuilder.*
+import io.javalin.plugin.json.JavalinJackson
 import io.javalin.plugin.openapi.ui.SwaggerOptions
 import io.javalin.plugin.openapi.OpenApiOptions
 import io.javalin.plugin.openapi.OpenApiPlugin
@@ -15,6 +17,8 @@ class JavalinConfig {
         val app = Javalin.create {
             it.registerPlugin(getConfiguredOpenApiPlugin())
             it.defaultContentType = "application/json"
+            it.jsonMapper(JavalinJackson(jsonObjectMapper()))
+            it.enableWebjars()
         }.apply {
             exception(Exception::class.java) { e, _ -> e.printStackTrace() }
             error(404) { ctx -> ctx.json("404 - Not Found") }
@@ -55,6 +59,7 @@ class JavalinConfig {
                 get(HealthTrackerController::getAllActivities)
                 post(HealthTrackerController::addActivity)
                 path("{activity-id}"){
+                    get(HealthTrackerController::getActivitiesByActivityId)
                     delete(HealthTrackerController::deleteActivity)
                     patch(HealthTrackerController::updateActivityById)
                 }
