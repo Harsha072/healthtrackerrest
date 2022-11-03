@@ -2,8 +2,10 @@ package ie.setu.utils
 
 import ie.setu.domain.Activity
 import ie.setu.domain.User
+import ie.setu.domain.Workout
 import ie.setu.domain.db.Activities
 import ie.setu.domain.db.Users
+import ie.setu.domain.db.Workouts
 import org.jetbrains.exposed.sql.ResultRow
 
 fun mapToUser(it: ResultRow) = User(
@@ -19,4 +21,12 @@ fun mapToActivity(it: ResultRow) = Activity(
     started = it[Activities.started],
     calories = it[Activities.calories],
     userId = it[Activities.userId]
+)
+
+fun mapToWorkout(it: ResultRow) = Workout(
+    id = it[Workouts.id],
+    name = it[Workouts.name],
+    description = it[Workouts.description],
+    duration = it[Workouts.duration],
+    userId = it[Workouts.userId]
 )

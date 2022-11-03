@@ -2,10 +2,13 @@ package ie.setu.helpers
 
 import ie.setu.domain.Activity
 import ie.setu.domain.User
+import ie.setu.domain.Workout
 import ie.setu.domain.db.Activities
 import ie.setu.domain.db.Users
+import ie.setu.domain.db.Workouts
 import ie.setu.domain.repository.ActivityDAO
 import ie.setu.domain.repository.UserDAO
+import ie.setu.domain.repository.WorkoutDAO
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone
@@ -38,6 +41,12 @@ val activities = arrayListOf<Activity>(
     Activity(id = 3, description = "Walking", duration = 12.0, calories = 120, started = DateTime.now(), userId = 2)
 )
 
+val workout = arrayListOf<Workout>(
+    Workout(id=1,name = "cardio", description = "Light weight training", duration = 7.5, userId = 1),
+    Workout(id=2,name = "strength", description = "heavy weight training", duration = 8.9, userId = 2),
+    Workout(id=3,name = "aerobic", description = "simple weight training", duration = 5.7, userId = 1),
+)
+
 fun populateUserTable(): UserDAO {
     SchemaUtils.create(Users)
     val userDAO = UserDAO()
@@ -54,4 +63,12 @@ fun populateActivityTable(): ActivityDAO {
     activityDAO.save(activities[1])
     activityDAO.save(activities[2])
     return activityDAO
+}
+fun populateWorkoutTable(): WorkoutDAO {
+    SchemaUtils.create(Workouts)
+    val workoutDAO = WorkoutDAO()
+    workoutDAO.save(workout[0])
+    workoutDAO.save(workout[1])
+    workoutDAO.save(workout[2])
+    return workoutDAO
 }
