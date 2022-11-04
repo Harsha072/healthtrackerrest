@@ -1,5 +1,8 @@
 package ie.setu.controllers
 
+import com.fasterxml.jackson.databind.SerializationFeature
+import com.fasterxml.jackson.datatype.joda.JodaModule
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import ie.setu.domain.Workout
 import ie.setu.domain.repository.UserDAO
 import ie.setu.domain.repository.WorkoutDAO
@@ -10,15 +13,19 @@ object WorkoutController {
     private val userDao = UserDAO()
     private val workoutDAO = WorkoutDAO()
     fun getAllWorkouts(ctx: Context) {
-        //mapper handles the deserialization of Joda date into a String.
-        val workouts = workoutDAO.getAllWorkouts()
-        if (workouts.size != 0) {
+val workouts = workoutDAO.getAllWorkouts()
+     if (workoutDAO.getAllWorkouts()!=null) {
+         val mapper = jacksonObjectMapper()
+             .registerModule(JodaModule())
+             .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
+
+         ctx.json(mapper.writeValueAsString( workoutDAO.getAllWorkouts() ))
             ctx.status(200)
         }
         else{
             ctx.status(404)
         }
-        ctx.json(workouts)
+       ctx.json(workouts)
     }
 
     fun getWorkoutsByUserId(ctx: Context) {
@@ -30,11 +37,11 @@ object WorkoutController {
                 ctx.json(workouts)
             }
             else{
-                ctx.json(404)
+                ctx.status(404)
             }
         }
         else{
-            ctx.json(404)
+            ctx.status(404)
         }
     }
     fun getWorkoutsById(ctx: Context) {
@@ -46,7 +53,7 @@ object WorkoutController {
             ctx.json(workouts)
         }
         else{
-            ctx.json(404)
+            ctx.status(404)
         }
     }
 
@@ -56,12 +63,23 @@ object WorkoutController {
     fun addWorkout(ctx: Context) {
         //mapper handles the serialisation of Joda date into a String.
         val workout : Workout = jsonToObject(ctx.body())
-        val workoutId = workoutDAO.save(workout)
-        if (workoutId != null) {
-            workout.id = workoutId
-            ctx.json(workout)
-            ctx.status(201)
+        val userId = userDao.findById(workout.userId)
+
+        if(userId!=null){
+            val workoutId = workoutDAO.save(workout)
+            if (workoutId != null) {
+                workout.id = workoutId
+                ctx.json(workout)
+                ctx.status(201)
+            }
+            else{
+                ctx.status(404)
+            }
         }
+        else{
+            ctx.status(404)
+        }
+
     }
 
     fun deleteWorkoutById(ctx: Context) {
@@ -77,13 +95,14 @@ object WorkoutController {
 
     fun updateWorkoutById(ctx: Context) {
         val workoutUpdates : Workout = jsonToObject(ctx.body())
-
-//        val activitiesList = activityDAO.findByActivityId(ctx.pathParam("activity-id").toInt())
+        print("hello updates "+workoutUpdates)
         if(workoutDAO.findByWorkoutId(ctx.pathParam("workout-id").toInt())!=null){
+            print("hello updates2 "+workoutUpdates)
        workoutDAO.updateWorkoutBasedOnWorkoutId(ctx.pathParam("workout-id").toInt(),workoutUpdates)
             ctx.status(204)
         }
         else{
+
             ctx.status(404)
         }
 
@@ -92,7 +111,7 @@ object WorkoutController {
     fun deleteWorkoutByUserId(ctx: Context) {
         if (userDao.findById(ctx.pathParam("user-id").toInt()) != null) {
             if (workoutDAO.findByWorkoutId(ctx.pathParam("workout-id").toInt()) != null) {
-              workoutDAO.deleteWorkoutByUserId(ctx.pathParam("workout-id").toInt())
+              workoutDAO.deleteWorkoutByUserId(ctx.pathParam("user-id").toInt())
                 ctx.status(204)
             } else {
                 ctx.status(404)

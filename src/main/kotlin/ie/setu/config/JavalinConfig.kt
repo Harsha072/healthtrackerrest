@@ -3,6 +3,7 @@ package ie.setu.config
 import ie.setu.controllers.ActivityController
 import ie.setu.controllers.UserController
 import ie.setu.controllers.WorkoutController
+import ie.setu.controllers.WorkoutSessionController
 import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
 import io.javalin.apibuilder.ApiBuilder.*
@@ -56,6 +57,11 @@ class JavalinConfig {
                         delete(WorkoutController::deleteWorkoutByUserId)
 
                     }
+                    path("workoutSession"){
+                        get(WorkoutSessionController::getWorkoutSessionByUserId)
+                        delete(WorkoutSessionController::deleteWorkoutSessionByUserId)
+
+                    }
                 }
 
                 path("/email/{email}"){
@@ -80,6 +86,15 @@ class JavalinConfig {
                     patch(WorkoutController::updateWorkoutById)
                 }
 
+            }
+            path("/api/workoutSession"){
+                get(WorkoutSessionController::getAllWorkoutsSession)
+                post(WorkoutSessionController::addWorkoutSession)
+                path("{workoutSession-id}"){
+                    get(WorkoutSessionController::getWorkoutSessionById)
+                    delete(WorkoutSessionController::deleteWorkoutSessionById)
+                    patch(WorkoutSessionController::updateWorkoutSessionById)
+                }
             }
         }
     }

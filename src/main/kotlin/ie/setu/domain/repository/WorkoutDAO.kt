@@ -1,12 +1,9 @@
 package ie.setu.domain.repository
 
-import ie.setu.domain.Activity
 import ie.setu.domain.Workout
-import ie.setu.domain.db.Activities
 import ie.setu.domain.db.Workouts
 import ie.setu.utils.mapToWorkout
 import org.jetbrains.exposed.sql.*
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class WorkoutDAO {
@@ -16,10 +13,11 @@ class WorkoutDAO {
             Workouts.selectAll().map {
                 workoutList.add(mapToWorkout(it)) }
         }
+print("HIIIIIIIIIIIIII"+workoutList)
         return workoutList
     }
 
-    //Find a specific activity by activity id
+
     fun findByWorkoutId(id: Int): Workout?{
         return transaction {
             Workouts
@@ -29,7 +27,7 @@ class WorkoutDAO {
         }
     }
 
-    //Find all activities for a specific user id
+
     fun findWorkoutByUserId(userId: Int): List<Workout>{
         return transaction {
             Workouts
@@ -46,6 +44,7 @@ class WorkoutDAO {
                 it[description] = workout.description
                 it[duration] = workout.duration
                 it[userId] = workout.userId
+                it[mincalories] =workout.mincalories
             }
         } get Workouts.id
     }
@@ -71,6 +70,7 @@ class WorkoutDAO {
                 it[description] = workoutUpdates.description
                 it[duration] = workoutUpdates.duration
                 it[userId]=workoutUpdates.userId
+                it[mincalories]=workoutUpdates.mincalories
             }
         }
     }

@@ -9,4 +9,5 @@ object Workouts : Table("workout") {
     val description = varchar("description", 100)
     val duration = double("duration")
     val userId = integer("user_id").references(Users.id, onDelete = ReferenceOption.CASCADE)
+    val mincalories = integer("mincalories")
 }
