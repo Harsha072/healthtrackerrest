@@ -12,6 +12,7 @@ import junit.framework.TestCase.assertEquals
 import kong.unirest.HttpResponse
 import kong.unirest.JsonNode
 import kong.unirest.Unirest
+import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertNotEquals
 import org.junit.jupiter.api.Nested
@@ -123,7 +124,7 @@ class WorkoutControllerTest {
             val response = retrieveAllWorkout()
             if (response.status == 200){
                 val retrievedWorkout:ArrayList<Workout>  = jsonNodeToObject(response)
-                assertEquals(0, retrievedWorkout.size)
+                assertEquals(5, retrievedWorkout.size)
             }
             else{
                 assertEquals(404, response.status)
@@ -316,5 +317,6 @@ class WorkoutControllerTest {
             Assertions.assertEquals(404, retrieveWorkoutByWorkoutId(addedWorkout3.id).status)
         }
     }
+
 
 }

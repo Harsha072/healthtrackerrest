@@ -21,8 +21,8 @@ import org.joda.time.chrono.ISOChronology
 
 
 val nonExistingEmail = "112233445566778testUser@xxxxx.xx"
-val validName = "Test User 66"
-val validEmail = "testuser78@test65.com"
+val validName = "Test User 505"
+val validEmail = "testuser505@test505.com"
 val updatedName = "Updated Name"
 val updatedEmail = "Updated Email"
 
@@ -35,6 +35,11 @@ val updatedWorkoutName = "updatedName"
 val updatedWorkoutDescription = "Updated Description"
 val updatedWorkoutDuration = 30.0
 val updatedWorkoutCalories = 945
+
+val updatedWorkoutSessionStarted = DateTime.parse("2020-06-11T05:59:27.258Z")
+val updatedWorkoutSessionEnded =  DateTime.parse("2020-06-11T05:59:27.258Z")
+val updatedtotalCalories = 30
+val updatedStaus ="complted"
 
 val users = arrayListOf<User>(
     User(name = "Alice Wonderland", email = "alice@wonderland.com", id = 1),
@@ -50,7 +55,7 @@ val activities = arrayListOf<Activity>(
 )
 
 val workout = arrayListOf<Workout>(
-    Workout(id=1,name = "cardio", description = "Light weight training", duration = 7.5, userId = 1,mincalories=200),
+    Workout(id=1,name = "HOME", description = "HOME training", duration = 7.5, userId = 1,mincalories=200),
     Workout(id=2,name = "strength", description = "heavy weight training", duration = 8.9, userId = 2,mincalories=400),
     Workout(id=3,name = "aerobic", description = "simple weight training", duration = 5.7, userId = 1,mincalories=300),
 )
