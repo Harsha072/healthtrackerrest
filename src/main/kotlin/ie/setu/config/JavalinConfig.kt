@@ -1,6 +1,9 @@
 package ie.setu.config
 
-import ie.setu.controllers.HealthTrackerController
+import ie.setu.controllers.ActivityController
+import ie.setu.controllers.UserController
+import ie.setu.controllers.WorkoutController
+import ie.setu.controllers.WorkoutSessionController
 import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
 import io.javalin.apibuilder.ApiBuilder.*
@@ -38,30 +41,59 @@ class JavalinConfig {
     private fun registerRoutes(app: Javalin) {
         app.routes {
             path("/api/users") {
-                get(HealthTrackerController::getAllUsers)
-                post(HealthTrackerController::addUser)
+                get(UserController::getAllUsers)
+                post(UserController::addUser)
                 path("{user-id}"){
-                    get(HealthTrackerController::getUserByUserId)
-                    delete(HealthTrackerController::deleteUser)
-                    patch(HealthTrackerController::updateUser)
+                    get(UserController::getUserByUserId)
+                    delete(UserController::deleteUser)
+                    patch(UserController::updateUser)
                     path("activities"){
-                        get(HealthTrackerController::getActivitiesByUserId)
-                        delete(HealthTrackerController::deleteActivityByUserId)
+                        get(ActivityController::getActivitiesByUserId)
+                        delete(ActivityController::deleteActivityByUserId)
+
+                    }
+                    path("workout"){
+                        get(WorkoutController::getWorkoutsByUserId)
+                        delete(WorkoutController::deleteWorkoutByUserId)
+
+                    }
+                    path("workoutSession"){
+                        get(WorkoutSessionController::getWorkoutSessionByUserId)
+                        delete(WorkoutSessionController::deleteWorkoutSessionByUserId)
 
                     }
                 }
 
                 path("/email/{email}"){
-                    get(HealthTrackerController::getUserByEmail)
+                    get(UserController::getUserByEmail)
                 }
             }
             path("/api/activities") {
-                get(HealthTrackerController::getAllActivities)
-                post(HealthTrackerController::addActivity)
+                get(ActivityController::getAllActivities)
+                post(ActivityController::addActivity)
                 path("{activity-id}"){
-                    get(HealthTrackerController::getActivitiesByActivityId)
-                    delete(HealthTrackerController::deleteActivity)
-                    patch(HealthTrackerController::updateActivityById)
+                    get(ActivityController::getActivitiesByActivityId)
+                    delete(ActivityController::deleteActivity)
+                    patch(ActivityController::updateActivityById)
+                }
+            }
+            path("/api/workout"){
+                get(WorkoutController::getAllWorkouts)
+                post(WorkoutController::addWorkout)
+                path("{workout-id}"){
+                    get(WorkoutController::getWorkoutsById)
+                    delete(WorkoutController::deleteWorkoutById)
+                    patch(WorkoutController::updateWorkoutById)
+                }
+
+            }
+            path("/api/workoutSession"){
+                get(WorkoutSessionController::getAllWorkoutsSession)
+                post(WorkoutSessionController::addWorkoutSession)
+                path("{workoutSession-id}"){
+                    get(WorkoutSessionController::getWorkoutSessionById)
+                    delete(WorkoutSessionController::deleteWorkoutSessionById)
+                    patch(WorkoutSessionController::updateWorkoutSessionById)
                 }
             }
         }

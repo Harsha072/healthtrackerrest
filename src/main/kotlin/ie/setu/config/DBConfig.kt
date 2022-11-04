@@ -8,11 +8,10 @@ class DbConfig{
     //NOTE: you need the ?sslmode=require otherwise you get an error complaining about the ssl certificate
     fun getDbConnection() :Database{
         return Database.connect(
-
-            "jdbc:postgresql://ec2-3-220-207-90.compute-1.amazonaws.com:5432/dn6majjot7p7m?sslmode=require",
+            "jdbc:postgresql://ec2-34-194-216-153.compute-1.amazonaws.com:5432/d24r67ul0gah78?sslmode=require",
             driver = "org.postgresql.Driver",
-            user = "szvrzwfdhlksze",
-            password = "1c926deeea3b6ef8aebe860126bfbec70e9f2bae1290abcf0f8844e897737c5a")
+            user = "ledrlgqizvueup",
+            password = "ff2ae6d25ea73c6ddcec5583232dd080eb3783ed97a489684e713ae456a02105")
     }
 
 }
