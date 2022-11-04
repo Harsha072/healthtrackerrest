@@ -33,15 +33,15 @@ class WorkoutDAOTest {
     @Nested
     inner class CreateWorkouts {
         @Test
-        fun `multiple sessions added to table can be retrieved successfully`() {
+        fun `multiple workout added to table can be retrieved successfully`() {
             transaction {
 
 
                 val userDAO = populateUserTable()
                 val workoutDAO = populateWorkoutTable()
-                val workoutSessionDAO = populateWorkoutSessionTable()
+
                 //Act & Assert
-              assertEquals(3, workoutSessionDAO.getAllWorkoutsSesiion().size)
+              assertEquals(3, workoutDAO.getAllWorkouts().size)
 
             }
         }
@@ -139,8 +139,8 @@ class WorkoutDAOTest {
 
                 //Act & Assert
                 val workoutupdated =  Workout(id=6,name = "cardio", description = "Light weight training", duration = 7.5, userId = 1,mincalories=200)
-                workoutsDAO.updateWorkoutBasedOnWorkoutId(4, workoutupdated)
-                assertEquals(null, workoutsDAO.findByWorkoutId(4))
+                workoutsDAO.updateWorkoutBasedOnWorkoutId(6, workoutupdated)
+                assertEquals(null, workoutsDAO.findByWorkoutId(6))
 
             }
         }

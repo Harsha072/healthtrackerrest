@@ -132,7 +132,7 @@ class ActivityDAOTest {
                 val activity3updated = Activity(id = 3, description = "Cardio", duration = 42.0,
                     calories = 220, started = DateTime.now(), userId = 2)
                 activityDAO.updateActivityBasedOnActivityId(activity3updated.id, activity3updated)
-                kotlin.test.assertEquals(activity3updated, activityDAO.findByActivityId(3))
+               assertEquals(activity3updated, activityDAO.findByActivityId(3))
             }
         }
 

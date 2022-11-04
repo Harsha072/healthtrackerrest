@@ -1,7 +1,7 @@
 package ie.setu.controllers
 
 import ie.setu.config.DbConfig
-import ie.setu.domain.Activity
+
 
 import ie.setu.domain.User
 import ie.setu.domain.Workout
@@ -227,7 +227,7 @@ class WorkoutControllerTest {
         @Test
         fun `updating an workout by workout id when it exists, returns 204 response`() {
 
-            //Arrange - add a user and an associated activity that we plan to do an update on
+
             val addedUser : User = jsonToObject(addUser(validName, validEmail).body.toString())
             val addWorkoutResponse = addWorkout(
                 workout[0].name,workout[0].description, workout[0].duration,addedUser.id,workout[0].mincalories
@@ -235,7 +235,7 @@ class WorkoutControllerTest {
            assertEquals(201, addWorkoutResponse.status)
             val addedWorkout = jsonNodeToObject<Workout>(addWorkoutResponse)
 
-            //Act & Assert - update the added activity and assert a 204 is returned
+
             val updatedWorkoutResponse = updatWorkout(addedWorkout.id, updatedWorkoutName,
                 updatedWorkoutDescription, updatedWorkoutDuration, addedUser.id, updatedWorkoutCalories)
             assertEquals(204, updatedWorkoutResponse.status)
@@ -269,17 +269,17 @@ class WorkoutControllerTest {
         }
 
         @Test
-        fun `deleting an activity by id when it exists, returns a 204 response`() {
+        fun `deleting an workout by id when it exists, returns a 204 response`() {
 
-            //Arrange - add a user and an associated activity that we plan to do a delete on
+
             val addedUser : User = jsonToObject(addUser(validName, validEmail).body.toString())
-            val addActivityResponse = addWorkout(
+            val addWorkoutResponse = addWorkout(
                 workout[0].name,workout[0].description, workout[0].duration,addedUser.id,workout[0].mincalories
             )
-            Assertions.assertEquals(201, addActivityResponse.status)
+            Assertions.assertEquals(201, addWorkoutResponse.status)
 
-            //Act & Assert - delete the added activity and assert a 204 is returned
-            val addedWorkout = jsonNodeToObject<Workout>(addActivityResponse)
+
+            val addedWorkout = jsonNodeToObject<Workout>(addWorkoutResponse)
             Assertions.assertEquals(204, deleteWorkoutByWorkoutId(addedWorkout.id).status)
 
             //After - delete the user
@@ -287,7 +287,7 @@ class WorkoutControllerTest {
         }
 
         @Test
-        fun `deleting all activities by userid when it exists, returns a 204 response`() {
+        fun `deleting all workouts by userid when it exists, returns a 204 response`() {
 
             //Arrange - add a user and 3 associated activities that we plan to do a cascade delete
             val addedUser : User = jsonToObject(addUser(validName, validEmail).body.toString())
