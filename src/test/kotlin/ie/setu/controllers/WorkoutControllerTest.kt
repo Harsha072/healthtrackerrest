@@ -69,7 +69,6 @@ class WorkoutControllerTest {
     private fun deleteWorkoutByUserId(id: Int): HttpResponse<String> {
         return Unirest.delete(origin + "/api/users/$id/workout").asString()
     }
-
     //helper function to add a test user to the database
     private fun updatWorkout(
         id: Int, name: String, description: String, duration: Double, userId: Int,mincalories: Int

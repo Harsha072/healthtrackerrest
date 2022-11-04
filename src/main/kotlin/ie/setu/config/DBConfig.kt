@@ -14,5 +14,4 @@ class DbConfig{
             password = "ff2ae6d25ea73c6ddcec5583232dd080eb3783ed97a489684e713ae456a02105")
     }
 
-
 }

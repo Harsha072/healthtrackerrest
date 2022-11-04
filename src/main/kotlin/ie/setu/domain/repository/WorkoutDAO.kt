@@ -27,7 +27,6 @@ print("HIIIIIIIIIIIIII"+workoutList)
         }
     }
 
-
     fun findWorkoutByUserId(userId: Int): List<Workout>{
         return transaction {
             Workouts

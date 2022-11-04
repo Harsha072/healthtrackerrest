@@ -45,7 +45,6 @@ val workouts = workoutDAO.getAllWorkouts()
         }
     }
     fun getWorkoutsById(ctx: Context) {
-
         val workouts = workoutDAO.findByWorkoutId(ctx.pathParam("workout-id").toInt())
         if (workouts!=null) {
             //mapper handles the deserialization of Joda date into a String.

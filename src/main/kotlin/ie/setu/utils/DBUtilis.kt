@@ -33,7 +33,6 @@ fun mapToWorkout(it: ResultRow) = Workout(
     userId = it[Workouts.userId],
     mincalories = it[Workouts.mincalories]
 )
-
 fun mapToWorkoutSession(it: ResultRow) = WorkoutSession(
     id = it[WorkoutSessions.id],
    started = it[WorkoutSessions.started],

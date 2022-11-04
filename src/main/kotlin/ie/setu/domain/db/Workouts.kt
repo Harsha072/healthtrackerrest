@@ -4,6 +4,7 @@ import org.jetbrains.exposed.sql.ReferenceOption
 import org.jetbrains.exposed.sql.Table
 
 object Workouts : Table("workout") {
+
     val id = integer("id").autoIncrement().primaryKey()
     val name = varchar("name", 100)
     val description = varchar("description", 100)

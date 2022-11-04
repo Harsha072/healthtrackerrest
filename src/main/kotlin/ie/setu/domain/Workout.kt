@@ -7,3 +7,4 @@ data class Workout (var id: Int,
                      var duration: Double,
                      var userId: Int,
                     var mincalories:Int)
+

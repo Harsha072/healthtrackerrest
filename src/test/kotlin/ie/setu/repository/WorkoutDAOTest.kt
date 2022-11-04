@@ -35,7 +35,6 @@ class WorkoutDAOTest {
         fun `multiple sessions added to table can be retrieved successfully`() {
             transaction {
 
-
                 //Arrange - create and populate tables with three users and three activities
                 val userDAO = populateUserTable()
                 val workoutDAO = populateWorkoutTable()
