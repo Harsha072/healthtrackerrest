@@ -3,15 +3,25 @@ package ie.setu.controllers
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.datatype.joda.JodaModule
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import ie.setu.domain.Activity
 import ie.setu.domain.Workout
 import ie.setu.domain.repository.UserDAO
 import ie.setu.domain.repository.WorkoutDAO
 import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
+import io.javalin.plugin.openapi.annotations.*
 
 object WorkoutController {
     private val userDao = UserDAO()
     private val workoutDAO = WorkoutDAO()
+    @OpenApi(
+        summary = "get all workouts",
+        operationId = "getAllWorkouts",
+        tags = ["Workouts"],
+        path = "/api/workout",
+        method = HttpMethod.GET,
+        responses = [OpenApiResponse("200", [OpenApiContent(Array<Workout>::class)])]
+    )
     fun getAllWorkouts(ctx: Context) {
 val workouts = workoutDAO.getAllWorkouts()
      if (workoutDAO.getAllWorkouts()!=null) {
@@ -28,6 +38,14 @@ val workouts = workoutDAO.getAllWorkouts()
        ctx.json(workouts)
     }
 
+    @OpenApi(
+        summary = "get all workouts by user id",
+        operationId = "getWorkoutsByUserId",
+        tags = ["Workouts"],
+        path = "/api/user/{user-id}/workout",
+        method = HttpMethod.GET,
+        responses = [OpenApiResponse("200", [OpenApiContent(Array<Workout>::class)])]
+    )
     fun getWorkoutsByUserId(ctx: Context) {
         if (userDao.findById(ctx.pathParam("user-id").toInt()) != null) {
             val workouts = workoutDAO.findWorkoutByUserId(ctx.pathParam("user-id").toInt())
@@ -44,6 +62,16 @@ val workouts = workoutDAO.getAllWorkouts()
             ctx.status(404)
         }
     }
+    @OpenApi(
+        summary = "get all workouts by  id",
+        operationId = "getWorkoutsById",
+        tags = ["Workouts"],
+        path = "/api/user/workout/{workout-id}",
+        method = HttpMethod.GET,
+        pathParams = [OpenApiParam("workout-id", Int::class, "The workout ID")],
+        responses  = [OpenApiResponse("204")]
+
+    )
     fun getWorkoutsById(ctx: Context) {
         val workouts = workoutDAO.findByWorkoutId(ctx.pathParam("workout-id").toInt())
         if (workouts!=null) {
@@ -58,7 +86,14 @@ val workouts = workoutDAO.getAllWorkouts()
 
 
 
-
+    @OpenApi(
+        summary = "add  workouts",
+        operationId = "addWorkout",
+        tags = ["Workouts"],
+        path = "/api/workout",
+        method = HttpMethod.POST,
+        responses = [OpenApiResponse("200", [OpenApiContent(Array<Workout>::class)])]
+    )
     fun addWorkout(ctx: Context) {
         //mapper handles the serialisation of Joda date into a String.
         val workout : Workout = jsonToObject(ctx.body())
@@ -80,7 +115,15 @@ val workouts = workoutDAO.getAllWorkouts()
         }
 
     }
-
+    @OpenApi(
+        summary = "Delete workout by ID",
+        operationId = "deleteWorkoutById",
+        tags = ["Workout"],
+        path = "/api/workout/{workout-id}",
+        method = HttpMethod.DELETE,
+        pathParams = [OpenApiParam("workout-id", Int::class, "The workout ID")],
+        responses  = [OpenApiResponse("204")]
+    )
     fun deleteWorkoutById(ctx: Context) {
 
         if(workoutDAO.findByWorkoutId(ctx.pathParam("workout-id").toInt()) !=null){
@@ -91,6 +134,15 @@ val workouts = workoutDAO.getAllWorkouts()
             ctx.status(404)
         }
     }
+    @OpenApi(
+        summary="Update workout by ID",
+        operationId="updateWorkoutById",
+        tags=["Workout"],
+        path="/api/workout/{workout-id}",
+        method= HttpMethod.PATCH,
+        pathParams=[OpenApiParam("workout-id", Int::class, "The workout ID")],
+        responses=[OpenApiResponse("204")]
+    )
 
     fun updateWorkoutById(ctx: Context) {
         val workoutUpdates : Workout = jsonToObject(ctx.body())
@@ -107,6 +159,15 @@ val workouts = workoutDAO.getAllWorkouts()
 
     }
 
+    @OpenApi(
+        summary = "Delete workout by userID",
+        operationId = "deleteWorkoutById",
+        tags = ["Workout"],
+        path = "/api/users/{user-id}/workout",
+        method = HttpMethod.DELETE,
+        pathParams = [OpenApiParam("user-id", Int::class, "The user ID")],
+        responses  = [OpenApiResponse("204")]
+    )
     fun deleteWorkoutByUserId(ctx: Context) {
         if (userDao.findById(ctx.pathParam("user-id").toInt()) != null) {
             if (workoutDAO.findByWorkoutId(ctx.pathParam("workout-id").toInt()) != null) {

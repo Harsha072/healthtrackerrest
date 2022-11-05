@@ -148,8 +148,8 @@ class ActivityDAOTest {
                 val activity4updated = Activity(id = 4, description = "Cardio", duration = 42.0,
                     calories = 220, started = DateTime.now(), userId = 2)
                 activityDAO.updateActivityBasedOnActivityId(4, activity4updated)
-                kotlin.test.assertEquals(null, activityDAO.findByActivityId(4))
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+            assertEquals(null, activityDAO.findByActivityId(4))
+           assertEquals(3, activityDAO.getAll().size)
             }
         }
     }
@@ -165,9 +165,9 @@ class ActivityDAOTest {
                 val activityDAO = populateActivityTable()
 
                 //Act & Assert
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+              assertEquals(3, activityDAO.getAll().size)
                 activityDAO.deleteActivityByActivityId(4)
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+                assertEquals(3, activityDAO.getAll().size)
             }
         }
 
@@ -179,10 +179,9 @@ class ActivityDAOTest {
                 val userDAO = populateUserTable()
                 val activityDAO = populateActivityTable()
 
-                //Act & Assert
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+            assertEquals(3, activityDAO.getAll().size)
                 activityDAO.deleteActivityByActivityId(activity3.id)
-                kotlin.test.assertEquals(2, activityDAO.getAll().size)
+              assertEquals(2, activityDAO.getAll().size)
             }
         }
 
@@ -196,9 +195,9 @@ class ActivityDAOTest {
                 val activityDAO = populateActivityTable()
 
                 //Act & Assert
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+                assertEquals(3, activityDAO.getAll().size)
                 activityDAO.deleteActivityByUserId(3)
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+               assertEquals(3, activityDAO.getAll().size)
             }
         }
 
@@ -211,9 +210,9 @@ class ActivityDAOTest {
                 val activityDAO = populateActivityTable()
 
                 //Act & Assert
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+                assertEquals(3, activityDAO.getAll().size)
                 activityDAO.deleteActivityByUserId(1)
-                kotlin.test.assertEquals(1, activityDAO.getAll().size)
+                assertEquals(1, activityDAO.getAll().size)
             }
         }
     }
