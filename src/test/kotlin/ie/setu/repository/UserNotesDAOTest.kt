@@ -38,7 +38,7 @@ class UserNotesDAOTest {
 
 
                 //Arrange - create and populate tables with three users and three activities
-                val userDAO = populateUserTable()
+                 populateUserTable()
                 val userNotesDAO = populateUserNotes()
                 //Act & Assert
                 TestCase.assertEquals(3, userNotesDAO.getAll().size)
@@ -53,7 +53,7 @@ class UserNotesDAOTest {
         @Test
         fun `getting all notes stored in table successfully`(){
             transaction {
-                val usersDAO = populateUserTable()
+                populateUserTable()
                val userNotes = populateUserNotes()
                 TestCase.assertEquals(3, userNotes.getAll().size)
             }
@@ -64,7 +64,7 @@ class UserNotesDAOTest {
         @Test
         fun `get notes by user id that has no related notes, results in no record found`(){
             transaction {
-                val usersDAO = populateUserTable()
+               populateUserTable()
                 val userNotes = populateUserNotes()
                 TestCase.assertEquals(0, userNotes.findNoteByUserId(8).size)
             }
@@ -76,7 +76,7 @@ class UserNotesDAOTest {
         @Test
         fun `get note by user id that has related notes, results in correct note returned`() {
             transaction {
-                val usersDAO = populateUserTable()
+                populateUserTable()
                 val userNotes = populateUserNotes()
                 TestCase.assertEquals(userNote[0], userNotes.findNoteByUserId(1).get(0))
                 TestCase.assertEquals(userNote[1], userNotes.findNoteByUserId(1).get(1))
@@ -102,7 +102,7 @@ class UserNotesDAOTest {
         fun `get note by title that has no records, results in no record returned`() {
             transaction {
                 //Arrange - create and populate tables with three users and three activities
-                val usersDAO = populateUserTable()
+               populateUserTable()
                 val userNotes = populateUserNotes()
                 //Act & Assert
                 TestCase.assertEquals(null, userNotes.findByTitle("My family"))
@@ -112,7 +112,7 @@ class UserNotesDAOTest {
         fun `get note by id that has no records, results in no record returned`() {
             transaction {
                 //Arrange - create and populate tables with three users and three activities
-                val usersDAO = populateUserTable()
+                populateUserTable()
                 val userNotes = populateUserNotes()
                 //Act & Assert
                 TestCase.assertEquals(null, userNotes.findNoteById(-1))
@@ -128,7 +128,7 @@ class UserNotesDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val usersDAO = populateUserTable()
+               populateUserTable()
                 val userNotes = populateUserNotes()
 
                 //Act & Assert
@@ -143,7 +143,7 @@ class UserNotesDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val usersDAO = populateUserTable()
+              populateUserTable()
                 val userNotes = populateUserNotes()
                 //Act & Assert
                 val noteupdated = UserNote(id=1,title="My life", text="its going good", shared = "true", userId = 1)
@@ -161,7 +161,7 @@ class UserNotesDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val usersDAO = populateUserTable()
+              populateUserTable()
                 val userNotes = populateUserNotes()
 
                 //Act & Assert
@@ -176,7 +176,7 @@ class UserNotesDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val usersDAO = populateUserTable()
+                populateUserTable()
                 val userNotes = populateUserNotes()
                 //Act & Assert
                 assertEquals(3, userNotes.getAll().size)
@@ -191,7 +191,7 @@ class UserNotesDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val usersDAO = populateUserTable()
+             populateUserTable()
                 val userNotes = populateUserNotes()
 
                 //Act & Assert
@@ -206,7 +206,7 @@ class UserNotesDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val usersDAO = populateUserTable()
+             populateUserTable()
                 val userNotes = populateUserNotes()
 
                 //Act & Assert

@@ -53,7 +53,6 @@ class ActivityControllerTest {
     private fun retrieveActivitiesByUserId(id: Int): HttpResponse<JsonNode> {
         return Unirest.get(origin + "/api/users/${id}/activities").asJson()
     }
-
     private fun retrieveActivityByActivityId(id: Int): HttpResponse<JsonNode> {
         return Unirest.get(origin + "/api/activities/${id}").asJson()
     }

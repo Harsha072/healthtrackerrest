@@ -128,7 +128,7 @@ class WorkoutSessionControllerTest {
 
             //Arrange - check there is no user for -1 id
             val userId = -1
-            val workoutId=1
+
             Assertions.assertEquals(404, retrieveUserById(userId).status)
 
             val addSessionResponse = addWorkoutSession(
@@ -174,11 +174,11 @@ class WorkoutSessionControllerTest {
             )
             addWorkoutSession(
                 workoutSession[1].started, workoutSession[1].ended,
-                workoutSession[1].totalCalories, workoutSession[1].status,addedWokout1.id, addedUser.id
+                workoutSession[1].totalCalories, workoutSession[1].status,addedWokout2.id, addedUser.id
             )
             addWorkoutSession(
                 workoutSession[2].started, workoutSession[2].ended,
-                workoutSession[2].totalCalories, workoutSession[2].status,addedWokout1.id, addedUser.id
+                workoutSession[2].totalCalories, workoutSession[2].status,addedWokout3.id, addedUser.id
             )
 
             //Assert and Act - retrieve the three added activities by user id
