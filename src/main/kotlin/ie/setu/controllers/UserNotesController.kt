@@ -1,9 +1,6 @@
 package ie.setu.controllers
 
-import com.fasterxml.jackson.databind.SerializationFeature
-import com.fasterxml.jackson.datatype.joda.JodaModule
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import ie.setu.domain.Activity
+
 import ie.setu.domain.UserNote
 import ie.setu.domain.repository.UserDAO
 import ie.setu.domain.repository.UserNotesDAO
@@ -21,7 +18,7 @@ object UserNotesController {
         tags = ["Notes"],
         path = "/api/notes",
         method = HttpMethod.GET,
-        responses = [OpenApiResponse("200", [OpenApiContent(Array<Activity>::class)])]
+        responses = [OpenApiResponse("200", [OpenApiContent(Array<UserNote>::class)])]
     )
     fun getAllNotes(ctx: Context) {
         //mapper handles the deserialization of Joda date into a String.
