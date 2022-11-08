@@ -25,7 +25,6 @@ class DbConfig{
             user = PGUSER,
             password = PGPASSWORD
         )
-
         logger.info{"db url - connection: " + dbConfig.url}
 
         return dbConfig
