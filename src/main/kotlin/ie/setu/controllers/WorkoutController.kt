@@ -17,7 +17,7 @@ object WorkoutController {
     @OpenApi(
         summary = "get all workouts",
         operationId = "getAllWorkouts",
-        tags = ["Workouts"],
+        tags = ["Workout"],
         path = "/api/workout",
         method = HttpMethod.GET,
         responses = [OpenApiResponse("200", [OpenApiContent(Array<Workout>::class)])]
@@ -41,7 +41,7 @@ val workouts = workoutDAO.getAllWorkouts()
     @OpenApi(
         summary = "get all workouts by user id",
         operationId = "getWorkoutsByUserId",
-        tags = ["Workouts"],
+        tags = ["Workout"],
         path = "/api/user/{user-id}/workout",
         method = HttpMethod.GET,
         responses = [OpenApiResponse("200", [OpenApiContent(Array<Workout>::class)])]
@@ -65,7 +65,7 @@ val workouts = workoutDAO.getAllWorkouts()
     @OpenApi(
         summary = "get all workouts by  id",
         operationId = "getWorkoutsById",
-        tags = ["Workouts"],
+        tags = ["Workout"],
         path = "/api/user/workout/{workout-id}",
         method = HttpMethod.GET,
         pathParams = [OpenApiParam("workout-id", Int::class, "The workout ID")],
@@ -89,7 +89,7 @@ val workouts = workoutDAO.getAllWorkouts()
     @OpenApi(
         summary = "add  workouts",
         operationId = "addWorkout",
-        tags = ["Workouts"],
+        tags = ["Workout"],
         path = "/api/workout",
         method = HttpMethod.POST,
         responses = [OpenApiResponse("200", [OpenApiContent(Array<Workout>::class)])]
