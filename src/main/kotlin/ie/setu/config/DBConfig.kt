@@ -9,7 +9,7 @@ class DbConfig{
     fun getDbConnection() :Database{
 
         val logger = KotlinLogging.logger {}
-        logger.info{"Starting DB Connection..."}
+        println("Starting DB Connection...")
 
         val PGUSER = "merkpzxn"
         val PGPASSWORD = "eAi-Yz_XxA4fjHKWE8d5DwTOnJfmSfEL"
@@ -25,7 +25,7 @@ class DbConfig{
             user = PGUSER,
             password = PGPASSWORD
         )
-        logger.info{"db url - connection: " + dbConfig.url}
+        println("db url - connection: " + dbConfig.url)
 
         return dbConfig
     }
