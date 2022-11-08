@@ -43,7 +43,7 @@ class ActivityDAOTest {
 
 
                 //Arrange - create and populate tables with three users and three activities
-                val userDAO = populateUserTable()
+                 populateUserTable()
                 val activityDAO = populateActivityTable()
                 //Act & Assert
                 assertEquals(3, activityDAO.getAll().size)
@@ -59,7 +59,7 @@ class ActivityDAOTest {
         @Test
         fun `getting all activities stored in table successfully`(){
             transaction {
-                val usersDAO = populateUserTable()
+                populateUserTable()
                 val activityDAO = populateActivityTable()
                 assertEquals(3, activityDAO.getAll().size)
             }
@@ -70,7 +70,7 @@ class ActivityDAOTest {
         @Test
         fun `get activities by user id that has no related activity, results in no record found`(){
             transaction {
-                val usersDAO = populateUserTable()
+              populateUserTable()
                 val activityDAO = populateActivityTable()
                 TestCase.assertEquals(0, activityDAO.findByUserId(4).size)
             }
@@ -82,7 +82,7 @@ class ActivityDAOTest {
         @Test
         fun `get activity by user id that has related activity, results in correct activity returned`() {
             transaction {
-                val usersDAO = populateUserTable()
+                populateUserTable()
                 val activityDAO = populateActivityTable()
                 assertEquals(activity1, activityDAO.findByUserId(1).get(0))
                 assertEquals(activity2, activityDAO.findByUserId(1).get(1))
@@ -108,7 +108,7 @@ class ActivityDAOTest {
         fun `get activity by activity id that has no records, results in no record returned`() {
             transaction {
                 //Arrange - create and populate tables with three users and three activities
-                val userDAO = populateUserTable()
+           populateUserTable()
                 val activityDAO = populateActivityTable()
                 //Act & Assert
                 assertEquals(null, activityDAO.findByActivityId(4))
@@ -125,7 +125,7 @@ class ActivityDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val userDAO = populateUserTable()
+           populateUserTable()
                 val activityDAO = populateActivityTable()
 
                 //Act & Assert
@@ -141,15 +141,15 @@ class ActivityDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val userDAO = populateUserTable()
+            populateUserTable()
                 val activityDAO = populateActivityTable()
 
                 //Act & Assert
                 val activity4updated = Activity(id = 4, description = "Cardio", duration = 42.0,
                     calories = 220, started = DateTime.now(), userId = 2)
                 activityDAO.updateActivityBasedOnActivityId(4, activity4updated)
-                kotlin.test.assertEquals(null, activityDAO.findByActivityId(4))
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+            assertEquals(null, activityDAO.findByActivityId(4))
+           assertEquals(3, activityDAO.getAll().size)
             }
         }
     }
@@ -161,13 +161,13 @@ class ActivityDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val userDAO = populateUserTable()
+              populateUserTable()
                 val activityDAO = populateActivityTable()
 
                 //Act & Assert
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+              assertEquals(3, activityDAO.getAll().size)
                 activityDAO.deleteActivityByActivityId(4)
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+                assertEquals(3, activityDAO.getAll().size)
             }
         }
 
@@ -176,13 +176,12 @@ class ActivityDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val userDAO = populateUserTable()
+              populateUserTable()
                 val activityDAO = populateActivityTable()
 
-                //Act & Assert
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+            assertEquals(3, activityDAO.getAll().size)
                 activityDAO.deleteActivityByActivityId(activity3.id)
-                kotlin.test.assertEquals(2, activityDAO.getAll().size)
+              assertEquals(2, activityDAO.getAll().size)
             }
         }
 
@@ -192,13 +191,13 @@ class ActivityDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val userDAO = populateUserTable()
+               populateUserTable()
                 val activityDAO = populateActivityTable()
 
                 //Act & Assert
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+                assertEquals(3, activityDAO.getAll().size)
                 activityDAO.deleteActivityByUserId(3)
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+               assertEquals(3, activityDAO.getAll().size)
             }
         }
 
@@ -207,13 +206,13 @@ class ActivityDAOTest {
             transaction {
 
                 //Arrange - create and populate tables with three users and three activities
-                val userDAO = populateUserTable()
+               populateUserTable()
                 val activityDAO = populateActivityTable()
 
                 //Act & Assert
-                kotlin.test.assertEquals(3, activityDAO.getAll().size)
+                assertEquals(3, activityDAO.getAll().size)
                 activityDAO.deleteActivityByUserId(1)
-                kotlin.test.assertEquals(1, activityDAO.getAll().size)
+                assertEquals(1, activityDAO.getAll().size)
             }
         }
     }

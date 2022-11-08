@@ -1,17 +1,8 @@
 package ie.setu.helpers
 
-import ie.setu.domain.Activity
-import ie.setu.domain.User
-import ie.setu.domain.Workout
-import ie.setu.domain.WorkoutSession
-import ie.setu.domain.db.Activities
-import ie.setu.domain.db.Users
-import ie.setu.domain.db.WorkoutSessions
-import ie.setu.domain.db.Workouts
-import ie.setu.domain.repository.ActivityDAO
-import ie.setu.domain.repository.UserDAO
-import ie.setu.domain.repository.WorkoutDAO
-import ie.setu.domain.repository.WorkoutSessionDAO
+import ie.setu.domain.*
+import ie.setu.domain.db.*
+import ie.setu.domain.repository.*
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone
@@ -21,8 +12,8 @@ import org.joda.time.chrono.ISOChronology
 
 
 val nonExistingEmail = "112233445566778testUser@xxxxx.xx"
-val validName = "Test User 505"
-val validEmail = "testuser505@test505.com"
+val validName = "Test User 672"
+val validEmail = "testuser672@test672.com"
 val updatedName = "Updated Name"
 val updatedEmail = "Updated Email"
 
@@ -40,6 +31,11 @@ val updatedWorkoutSessionStarted = DateTime.parse("2020-06-11T05:59:27.258Z")
 val updatedWorkoutSessionEnded =  DateTime.parse("2020-06-11T05:59:27.258Z")
 val updatedtotalCalories = 30
 val updatedStaus ="complted"
+
+val updatedtitle = "my life"
+val updatedtext =  "my rules"
+val updatedshared = "true"
+
 
 val users = arrayListOf<User>(
     User(name = "Alice Wonderland", email = "alice@wonderland.com", id = 1),
@@ -63,6 +59,11 @@ val workoutSession = arrayListOf<WorkoutSession>(
     WorkoutSession(id=1,started=DateTime.now(), ended=DateTime.now(), totalCalories = 300,status="completed", workoutId = 2, userId = 1),
     WorkoutSession(id=2,started=DateTime.now(), ended=DateTime.now(), totalCalories = 400,status="not completed", workoutId = 2, userId = 1),
     WorkoutSession(id=3,started=DateTime.now(), ended=DateTime.now(), totalCalories = 500,status="pending", workoutId = 1, userId = 3),
+)
+val userNote = arrayListOf<UserNote>(
+    UserNote(id=1,title="My day", text="its going good", shared = "true", userId = 1),
+    UserNote(id=2,title="My routine", text="usual", shared = "false", userId = 1),
+    UserNote(id=3,title="My dog", text="is good boy", shared = "true", userId = 2),
 )
 fun populateUserTable(): UserDAO {
     SchemaUtils.create(Users)
@@ -96,4 +97,12 @@ fun populateWorkoutSessionTable(): WorkoutSessionDAO {
     workoutSessionDAO.save(workoutSession[1])
     workoutSessionDAO.save(workoutSession[2])
     return workoutSessionDAO
+}
+fun populateUserNotes(): UserNotesDAO {
+    SchemaUtils.create(UserNotes)
+    val uerNotesDAO = UserNotesDAO()
+    uerNotesDAO.saveNote(userNote[0])
+    uerNotesDAO.saveNote(userNote[1])
+    uerNotesDAO.saveNote(userNote[2])
+    return uerNotesDAO
 }

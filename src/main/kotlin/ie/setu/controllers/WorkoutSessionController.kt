@@ -9,11 +9,20 @@ import ie.setu.domain.repository.UserDAO
 import ie.setu.domain.repository.WorkoutSessionDAO
 import ie.setu.utils.jsonToObject
 import io.javalin.http.Context
+import io.javalin.plugin.openapi.annotations.*
 
 object WorkoutSessionController {
     private val userDao = UserDAO();
     private val workoutSession = WorkoutSessionDAO()
 
+    @OpenApi(
+        summary = "get all workouts Session",
+        operationId = "getAllWorkoutsSession",
+        tags = ["WorkoutsSession"],
+        path = "/api/workoutSession",
+        method = HttpMethod.GET,
+        responses = [OpenApiResponse("200", [OpenApiContent(Array<WorkoutSession>::class)])]
+    )
     fun getAllWorkoutsSession(ctx: Context) {
 val workoutSessionList = workoutSession.getAllWorkoutsSesiion();
         if (workoutSession.getAllWorkoutsSesiion()!=null) {
@@ -29,6 +38,14 @@ val workoutSessionList = workoutSession.getAllWorkoutsSesiion();
         }
         ctx.json(workoutSessionList)
     }
+    @OpenApi(
+        summary = "get all workouts session by user id",
+        operationId = "getWorkoutSessionByUserId",
+        tags = ["WorkoutsSession"],
+        path = "/api/user/{user-id}/workoutSession",
+        method = HttpMethod.GET,
+        responses = [OpenApiResponse("200", [OpenApiContent(Array<WorkoutSession>::class)])]
+    )
 
     fun getWorkoutSessionByUserId(ctx: Context) {
         if (userDao.findById(ctx.pathParam("user-id").toInt()) != null) {
@@ -46,6 +63,17 @@ val workoutSessionList = workoutSession.getAllWorkoutsSesiion();
             ctx.status(404)
         }
     }
+
+    @OpenApi(
+        summary = "get all workouts session by  id",
+        operationId = "getWorkoutSessionById",
+        tags = ["WorkoutsSession"],
+        path = "/api/workoutSession/{workoutSession-id}",
+        method = HttpMethod.GET,
+        pathParams = [OpenApiParam("workoutSession-id", Int::class, "The workout sessionID")],
+        responses  = [OpenApiResponse("204")]
+
+    )
     fun getWorkoutSessionById(ctx: Context) {
 
         val workoutSession = workoutSession.findByWorkoutSessionId(ctx.pathParam("workoutSession-id").toInt())
@@ -60,7 +88,14 @@ val workoutSessionList = workoutSession.getAllWorkoutsSesiion();
     }
 
 
-
+    @OpenApi(
+        summary = "add  workouts session",
+        operationId = "addWorkoutSession",
+        tags = ["WorkoutsSession"],
+        path = "/api/workoutSession",
+        method = HttpMethod.POST,
+        responses = [OpenApiResponse("200", [OpenApiContent(Array<WorkoutSession>::class)])]
+    )
 
     fun addWorkoutSession(ctx: Context) {
         //mapper handles the serialisation of Joda date into a String.
@@ -79,7 +114,15 @@ val workoutSessionList = workoutSession.getAllWorkoutsSesiion();
             ctx.status(404)
 
     }
-
+    @OpenApi(
+        summary = "Delete workout session by ID",
+        operationId = "deleteWorkoutSessionById",
+        tags = ["WorkoutsSession"],
+        path = "/api/workout/{workoutSession-id}",
+        method = HttpMethod.DELETE,
+        pathParams = [OpenApiParam("workoutSession-id", Int::class, "The workout session ID")],
+        responses  = [OpenApiResponse("204")]
+    )
     fun deleteWorkoutSessionById(ctx: Context) {
 
         if(workoutSession.findByWorkoutSessionId(ctx.pathParam("workoutSession-id").toInt()) !=null){
@@ -90,6 +133,15 @@ val workoutSessionList = workoutSession.getAllWorkoutsSesiion();
             ctx.status(404)
         }
     }
+    @OpenApi(
+        summary="Update workout  sessionby ID",
+        operationId="updateWorkoutSessionById",
+        tags=["WorkoutsSession"],
+        path="/api/workout/{workoutSession-id}",
+        method= HttpMethod.PATCH,
+        pathParams=[OpenApiParam("workoutSession", Int::class, "The workout sessionID")],
+        responses=[OpenApiResponse("204")]
+    )
 
     fun updateWorkoutSessionById(ctx: Context) {
         val workoutSessionUpdates : WorkoutSession = jsonToObject(ctx.body())
@@ -105,7 +157,15 @@ val workoutSessionList = workoutSession.getAllWorkoutsSesiion();
         }
 
     }
-
+    @OpenApi(
+        summary = "Delete workout sessionby userID",
+        operationId = "deleteWorkoutSessionByUserId",
+        tags = ["WorkoutsSession"],
+        path = "/api/users/{user-id}/workoutSession",
+        method = HttpMethod.DELETE,
+        pathParams = [OpenApiParam("user-id", Int::class, "The user ID")],
+        responses  = [OpenApiResponse("204")]
+    )
     fun deleteWorkoutSessionByUserId(ctx: Context) {
         if (userDao.findById(ctx.pathParam("user-id").toInt()) != null) {
             if (workoutSession.findByWorkoutSessionId(ctx.pathParam("workout-id").toInt()) != null) {

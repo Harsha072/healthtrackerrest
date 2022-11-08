@@ -37,7 +37,7 @@ class WorkoutDAOTest {
             transaction {
 
 
-                val userDAO = populateUserTable()
+               populateUserTable()
                 val workoutDAO = populateWorkoutTable()
 
                 //Act & Assert
@@ -52,7 +52,7 @@ class WorkoutDAOTest {
         @Test
         fun `getting all workouts stored in table successfully`(){
             transaction {
-                val usersDAO = populateUserTable()
+                populateUserTable()
                 val workoutsDAO = populateWorkoutTable()
                 TestCase.assertEquals(3, workoutsDAO.getAllWorkouts().size)
             }
@@ -63,7 +63,7 @@ class WorkoutDAOTest {
         @Test
         fun `get workouts by user id that has no related workouts, results in no record found`(){
             transaction {
-                val usersDAO = populateUserTable()
+              populateUserTable()
                 val workoutsDAO = populateWorkoutTable()
                 TestCase.assertEquals(0, workoutsDAO.findWorkoutByUserId(4).size)
             }
@@ -75,7 +75,7 @@ class WorkoutDAOTest {
         @Test
         fun `get workout by user id that has related workout, results in correct workout returned`() {
             transaction {
-                val usersDAO = populateUserTable()
+                populateUserTable()
                val workoutDAO = populateWorkoutTable()
 
                TestCase.assertEquals(workout1, workoutDAO.findWorkoutByUserId(1).get(0))
@@ -102,7 +102,7 @@ class WorkoutDAOTest {
         fun `get workout by workout id that has no records, results in no record returned`() {
             transaction {
 
-                val userDAO = populateUserTable()
+                populateUserTable()
                 val workoutDAO = populateWorkoutTable()
                 //Act & Assert
                 TestCase.assertEquals(null, workoutDAO.findByWorkoutId(4))
@@ -119,7 +119,7 @@ class WorkoutDAOTest {
             transaction {
 
 
-                val userDAO = populateUserTable()
+                populateUserTable()
                 val workoutsDAO = populateWorkoutTable()
 
                 //Act & Assert
@@ -134,7 +134,7 @@ class WorkoutDAOTest {
             transaction {
 
 
-                val userDAO = populateUserTable()
+               populateUserTable()
                 val workoutsDAO = populateWorkoutTable()
 
                 //Act & Assert
@@ -153,7 +153,7 @@ class WorkoutDAOTest {
             transaction {
 
 
-                val userDAO = populateUserTable()
+              populateUserTable()
                 val workoutDAO = populateWorkoutTable()
 
                 //Act & Assert
@@ -168,7 +168,7 @@ class WorkoutDAOTest {
             transaction {
 
 
-                val userDAO = populateUserTable()
+           populateUserTable()
                 val workoutDAO = populateWorkoutTable()
                 //Act & Assert
                 assertEquals(3, workoutDAO.getAllWorkouts().size)
@@ -183,7 +183,7 @@ class WorkoutDAOTest {
             transaction {
 
 
-                val userDAO = populateUserTable()
+          populateUserTable()
                 val workoutDAO = populateWorkoutTable()
 
                 //Act & Assert
@@ -198,7 +198,7 @@ class WorkoutDAOTest {
             transaction {
 
 
-                val userDAO = populateUserTable()
+             populateUserTable()
                 val workoutDAO = populateWorkoutTable()
 
                 //Act & Assert

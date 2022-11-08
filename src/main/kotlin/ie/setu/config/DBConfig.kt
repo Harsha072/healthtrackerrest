@@ -1,17 +1,32 @@
 package ie.setu.config
 
 
+import mu.KotlinLogging
 import org.jetbrains.exposed.sql.Database
 
 class DbConfig{
 
-    //NOTE: you need the ?sslmode=require otherwise you get an error complaining about the ssl certificate
     fun getDbConnection() :Database{
-        return Database.connect(
-            "jdbc:postgresql://ec2-34-194-216-153.compute-1.amazonaws.com:5432/d24r67ul0gah78?sslmode=require",
-            driver = "org.postgresql.Driver",
-            user = "ledrlgqizvueup",
-            password = "ff2ae6d25ea73c6ddcec5583232dd080eb3783ed97a489684e713ae456a02105")
-    }
 
+        val logger = KotlinLogging.logger {}
+        logger.info{"Starting DB Connection..."}
+
+        val PGUSER = "merkpzxn"
+        val PGPASSWORD = "eAi-Yz_XxA4fjHKWE8d5DwTOnJfmSfEL"
+        val PGHOST = "lucky.db.elephantsql.com"
+        val PGPORT = "5432"
+        val PGDATABASE = "merkpzxn"
+
+        //url format should be jdbc:postgresql://host:port/database
+        val url = "jdbc:postgresql://$PGHOST:$PGPORT/$PGDATABASE"
+
+        val dbConfig = Database.connect(url,
+            driver="org.postgresql.Driver",
+            user = PGUSER,
+            password = PGPASSWORD
+        )
+        logger.info{"db url - connection: " + dbConfig.url}
+
+        return dbConfig
+    }
 }

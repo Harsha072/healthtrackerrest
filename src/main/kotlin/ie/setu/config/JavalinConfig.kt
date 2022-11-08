@@ -1,9 +1,6 @@
 package ie.setu.config
 
-import ie.setu.controllers.ActivityController
-import ie.setu.controllers.UserController
-import ie.setu.controllers.WorkoutController
-import ie.setu.controllers.WorkoutSessionController
+import ie.setu.controllers.*
 import ie.setu.utils.jsonObjectMapper
 import io.javalin.Javalin
 import io.javalin.apibuilder.ApiBuilder.*
@@ -25,13 +22,13 @@ class JavalinConfig {
         }.apply {
             exception(Exception::class.java) { e, _ -> e.printStackTrace() }
             error(404) { ctx -> ctx.json("404 - Not Found") }
-        }.start(getHerokuAssignedPort())
+        }.start(getRemoteAssignedPort())
 
         registerRoutes(app)
         return app
     }
 
-    private fun getHerokuAssignedPort(): Int {
+    private fun getRemoteAssignedPort(): Int {
         val herokuPort = System.getenv("PORT")
         return if (herokuPort != null) {
             Integer.parseInt(herokuPort)
@@ -61,6 +58,10 @@ class JavalinConfig {
                         get(WorkoutSessionController::getWorkoutSessionByUserId)
                         delete(WorkoutSessionController::deleteWorkoutSessionByUserId)
 
+                    }
+                    path("notes"){
+                        get(UserNotesController::getNotesByUserId)
+                        delete(UserNotesController::deleteNoteByUserId)
                     }
                 }
 
@@ -95,6 +96,20 @@ class JavalinConfig {
                     delete(WorkoutSessionController::deleteWorkoutSessionById)
                     patch(WorkoutSessionController::updateWorkoutSessionById)
                 }
+            }
+            path("/api/notes"){
+                get(UserNotesController::getAllNotes)
+               post(UserNotesController::addNote)
+                path("{notes-id}"){
+                    get(UserNotesController::getUserNoteByNoteId)
+                    patch(UserNotesController::updateUserNote)
+                    delete(UserNotesController::deleteNoteById)
+                }
+                path("title/{title}"){
+                    get(UserNotesController::getNotesByTitle)
+                }
+
+
             }
         }
     }
