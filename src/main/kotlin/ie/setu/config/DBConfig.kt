@@ -16,7 +16,6 @@ class DbConfig{
         val PGHOST = "lucky.db.elephantsql.com"
         val PGPORT = "5432"
         val PGDATABASE = "merkpzxn"
-
         //url format should be jdbc:postgresql://host:port/database
         val url = "jdbc:postgresql://$PGHOST:$PGPORT/$PGDATABASE"
 
