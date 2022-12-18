@@ -32,7 +32,7 @@ jobs:
 
       # Runs the Maven dokka task
       - name: Dokka with Maven
-        run: mvn dokka:dokka
+        run: mvn -B dokka:dokka
 
       # Builds a zip file with the KDoc generated website in it 
       - name: Archive KDoc Documentation
