@@ -313,7 +313,7 @@ class WorkoutSessionControllerTest {
         }
 
         @Test
-        fun `deleting activities by user id when it doesn't exist, returns a 404 response`() {
+        fun `deleting session by user id when it doesn't exist, returns a 404 response`() {
             //Act & Assert - attempt to delete a user that doesn't exist
             Assertions.assertEquals(404, deleteSessionByUserId(-1).status)
         }

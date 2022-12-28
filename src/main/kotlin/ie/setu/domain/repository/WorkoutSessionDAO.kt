@@ -57,22 +57,22 @@ class WorkoutSessionDAO {
 
     fun deleteWorkoutSessionByUserId(userId: Int){
         print("deleteWorkoutSessionByUserId\n")
-        return transaction{ Workouts.deleteWhere{
-            Workouts.userId eq userId
+        return transaction{ WorkoutSessions.deleteWhere{
+            WorkoutSessions.userId eq userId
         }
         }
     }
 
     fun deleteWorkoutSessionByWorkoutSessionId(WorkoutId: Int){
         print("deleteWorkoutSessionByWorkoutSessionId\n")
-        return transaction{ Workouts.deleteWhere{
-            Workouts.id eq WorkoutId
+        return transaction{ WorkoutSessions.deleteWhere{
+            WorkoutSessions.id eq WorkoutId
         }
         }
     }
-    fun updateWorkoutSessionBasedOnWorkoutSessionId(WorkoutSessionId: Int, workoutSessionUpdates: WorkoutSession) {
+    fun updateWorkoutSessionBasedOnWorkoutSessionId(WorkoutSessionId: Int, workoutSessionUpdates: WorkoutSession):Int {
         print("updateWorkoutSessionBasedOnWorkoutSessionId\n")
-        transaction {
+       return transaction {
             WorkoutSessions.update ({
                 WorkoutSessions.id eq WorkoutSessionId}) {
                 it[started] = workoutSessionUpdates.started

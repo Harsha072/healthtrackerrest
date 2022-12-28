@@ -21,6 +21,7 @@ class JavalinConfig {
             //added this jsonMapper for our integration tests - serialise objects to json
             it.jsonMapper(JavalinJackson(jsonObjectMapper()))
             it.enableWebjars()
+            it.enableCorsForOrigin("http://localhost:8080")
         }.apply {
             exception(Exception::class.java) { e, _ -> e.printStackTrace() }
             error(404) { ctx -> ctx.json("404 - Not Found") }

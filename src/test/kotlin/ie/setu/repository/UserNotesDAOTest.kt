@@ -132,7 +132,7 @@ class UserNotesDAOTest {
                 val userNotes = populateUserNotes()
 
                 //Act & Assert
-                val noteupdated =  UserNote(id=1,title="My life", text="its going good", shared = "true", userId = 1)
+                val noteupdated =  UserNote(id=1,title="My life", noteText="its going good", shared = "true", userId = 1)
                 userNotes.updateNote(noteupdated.id, noteupdated)
                 TestCase.assertEquals(noteupdated, userNotes.findNoteById(noteupdated.id))
             }
@@ -146,7 +146,7 @@ class UserNotesDAOTest {
               populateUserTable()
                 val userNotes = populateUserNotes()
                 //Act & Assert
-                val noteupdated = UserNote(id=1,title="My life", text="its going good", shared = "true", userId = 1)
+                val noteupdated = UserNote(id=1,title="My life", noteText="its going good", shared = "true", userId = 1)
                 userNotes.updateNote(4, noteupdated)
              assertEquals(null, userNotes.findNoteById(9))
                 assertEquals(3, userNotes.getAll().size)

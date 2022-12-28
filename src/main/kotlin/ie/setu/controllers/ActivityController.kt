@@ -184,6 +184,7 @@ object ActivityController {
 //        val activitiesList = activityDAO.findByActivityId(ctx.pathParam("activity-id").toInt())
         if(activityDAO.findByActivityId(ctx.pathParam("activity-id").toInt())!=null){
            activityDAO.updateActivityBasedOnActivityId(ctx.pathParam("activity-id").toInt(),activityUpdates)
+
             ctx.status(204)
         }
         else{

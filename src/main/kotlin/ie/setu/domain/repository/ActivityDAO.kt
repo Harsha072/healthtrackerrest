@@ -67,8 +67,8 @@ class ActivityDAO {
         }
     }
 
-    fun updateActivityBasedOnActivityId(ActivityId: Int, activityUpdates: Activity) {
-        transaction {
+    fun updateActivityBasedOnActivityId(ActivityId: Int, activityUpdates: Activity):Int {
+      return  transaction {
             Activities.update ({
                 Activities.id eq ActivityId}) {
                 it[description] = activityUpdates.description
@@ -77,7 +77,7 @@ class ActivityDAO {
                 it[started] =activityUpdates.started
                 it[userId]=activityUpdates.userId
             }
-       }
+       } and ActivityId
     }
 
 
