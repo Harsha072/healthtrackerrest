@@ -13,7 +13,7 @@ fun mapToUser(it: ResultRow) = User(
 fun mapToUserNote(it: ResultRow) = UserNote(
     id = it[UserNotes.id],
     title = it[UserNotes.title],
-    text = it[UserNotes.text],
+    noteText = it[UserNotes.noteText],
     shared = it[UserNotes.shared],
     userId = it[UserNotes.userId]
 )

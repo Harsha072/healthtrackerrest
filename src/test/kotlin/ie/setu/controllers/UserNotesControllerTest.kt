@@ -40,7 +40,7 @@ class UserNotesControllerTest {
             .body("""
                 {
                    "title":"$title",
-                   "text":"$text",
+                   "noteText":"$text",
                    "shared":"$shared",
                    "userId":$userId
                 }
@@ -95,7 +95,7 @@ class UserNotesControllerTest {
             val addedUser: User = jsonToObject(addUser(validName, validEmail).body.toString())
 
             val addActivityResponse = addNote(
-                userNote[0].title, userNote[0].text,
+                userNote[0].title, userNote[0].noteText,
                 userNote[0].shared,  addedUser.id
             )
             assertEquals(201, addActivityResponse.status)
@@ -112,7 +112,7 @@ class UserNotesControllerTest {
             Assertions.assertEquals(404, retrieveUserById(userId).status)
 
             val addActivityResponse =  addNote(
-                userNote[0].title, userNote[0].text,
+                userNote[0].title, userNote[0].noteText,
                 userNote[0].shared,  userId
             )
             Assertions.assertEquals(404, addActivityResponse.status)
@@ -139,15 +139,15 @@ class UserNotesControllerTest {
             val addedUser : User = jsonToObject(addUser(validName, validEmail).body.toString())
 
             addNote(
-                userNote[0].title, userNote[0].text,
+                userNote[0].title, userNote[0].noteText,
                 userNote[0].shared,  addedUser.id
             )
             addNote(
-                userNote[1].title, userNote[1].text,
+                userNote[1].title, userNote[1].noteText,
                 userNote[1].shared,  addedUser.id
             )
             addNote(
-                userNote[2].title, userNote[2].text,
+                userNote[2].title, userNote[2].noteText,
                 userNote[2].shared,  addedUser.id
             )
 
@@ -197,7 +197,7 @@ class UserNotesControllerTest {
 
             val addedUser : User = jsonToObject(addUser(validName, validEmail).body.toString())
             val addNoteResponse =  addNote(
-                userNote[0].title, userNote[0].text,
+                userNote[0].title, userNote[0].noteText,
                 userNote[0].shared,  addedUser.id
             )
             Assertions.assertEquals(201, addNoteResponse.status)
@@ -240,7 +240,7 @@ class UserNotesControllerTest {
 
 
               val addNoteResponse =  addNote(
-                userNote[0].title, userNote[0].text,
+                userNote[0].title, userNote[0].noteText,
                 userNote[0].shared,  addedUser.id
             )
             Assertions.assertEquals(201, addNoteResponse.status)
@@ -257,7 +257,7 @@ class UserNotesControllerTest {
             print("retrieved "+retrievedNoteResponse+"\n")
             val updatedNote = jsonNodeToObject<UserNote>(retrievedNoteResponse)
             Assertions.assertEquals(updatedtitle, updatedNote.title)
-            Assertions.assertEquals(updatedtext, updatedNote.text)
+            Assertions.assertEquals(updatedtext, updatedNote.noteText)
             Assertions.assertEquals(updatedshared, updatedNote.shared)
 
 
@@ -287,7 +287,7 @@ class UserNotesControllerTest {
             //Arrange - add a user and an associated activity that we plan to do a delete on
             val addedUser : User = jsonToObject(addUser(validName, validEmail).body.toString())
             val addNoteResponse =  addNote(
-                userNote[0].title, userNote[0].text,
+                userNote[0].title, userNote[0].noteText,
                 userNote[0].shared,  addedUser.id
             )
             Assertions.assertEquals(201, addNoteResponse.status)
@@ -306,17 +306,17 @@ class UserNotesControllerTest {
             //Arrange - add a user and 3 associated activities that we plan to do a cascade delete
             val addedUser : User = jsonToObject(addUser(validName, validEmail).body.toString())
             val addNoteResponse1 =  addNote(
-                userNote[0].title, userNote[0].text,
+                userNote[0].title, userNote[0].noteText,
                 userNote[0].shared,  addedUser.id
             )
             Assertions.assertEquals(201, addNoteResponse1.status)
             val addNoteResponse2 = addNote(
-                userNote[0].title, userNote[0].text,
+                userNote[0].title, userNote[0].noteText,
                 userNote[0].shared,  addedUser.id
             )
             Assertions.assertEquals(201, addNoteResponse2.status)
             val addNoteResponse3 = addNote(
-                userNote[0].title, userNote[0].text,
+                userNote[0].title, userNote[0].noteText,
                 userNote[0].shared,  addedUser.id
             )
             Assertions.assertEquals(201, addNoteResponse3.status)

@@ -61,9 +61,9 @@ val workoutSession = arrayListOf<WorkoutSession>(
     WorkoutSession(id=3,started=DateTime.now(), ended=DateTime.now(), totalCalories = 500,status="pending", workoutId = 1, userId = 3),
 )
 val userNote = arrayListOf<UserNote>(
-    UserNote(id=1,title="My day", text="its going good", shared = "true", userId = 1),
-    UserNote(id=2,title="My routine", text="usual", shared = "false", userId = 1),
-    UserNote(id=3,title="My dog", text="is good boy", shared = "true", userId = 2),
+    UserNote(id=1,title="My day", noteText="its going good", shared = "true", userId = 1),
+    UserNote(id=2,title="My routine", noteText="usual", shared = "false", userId = 1),
+    UserNote(id=3,title="My dog", noteText="is good boy", shared = "true", userId = 2),
 )
 fun populateUserTable(): UserDAO {
     SchemaUtils.create(Users)

@@ -50,7 +50,7 @@ class UserNotesDAO {
         return transaction {
             UserNotes.insert {
                 it[title] = userNote.title
-                it[text] = userNote.text
+                it[noteText] = userNote.noteText
                 it[shared]=userNote.shared
                 it[userId]=userNote.userId
             } get UserNotes.id
@@ -63,7 +63,7 @@ class UserNotesDAO {
                 UserNotes.id eq id
             }) {
                 it[title] = userNote.title
-                it[text] = userNote.text
+                it[noteText] = userNote.noteText
                 it[shared]=userNote.shared
                 it[userId]=userNote.userId
             }

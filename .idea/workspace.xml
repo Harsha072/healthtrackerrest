@@ -4,36 +4,67 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d861eb6-2f29-43c7-95ff-c3da9457d0e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/App.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/HealthTrackerController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/User.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/UserDAO.kt" afterDir="false" />
+    <list default="true" id="5d861eb6-2f29-43c7-95ff-c3da9457d0e7" name="Changes" comment="Basic vue code re-added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/config/JavalinConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/ActivityController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/ActivityController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/HealthTrackerController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WorkoutSessionController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/WorkoutSessionController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/UserNote.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/UserNote.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/UserNotes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/db/UserNotes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/ActivityDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/ActivityDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/UserNotesDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/UserNotesDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/WorkoutSessionDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/domain/repository/WorkoutSessionDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ie/setu/utils/DBUtilis.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ie/setu/utils/DBUtilis.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/HealthTrackerControllerTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/UserNotesControllerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/UserNotesControllerTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/WorkoutSessionControllerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/WorkoutSessionControllerTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/helpers/Fixtures.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/helpers/Fixtures.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/UserNotesDAOTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ie/setu/repository/UserNotesDAOTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="F:\healthtrackerReport" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="master" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="11" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2FfFCHrEbaNeTQC815mE5mmWyok" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -41,16 +72,217 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/IdeaProjects/healthtrackerrest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\healthtrackerrest\src\main\resources\vue-app\src\components" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="ie.setu.utils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Kotlin.AppKt">
+    <configuration name="All in healthtrackerrest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="healthtrackerrest" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadNote" type="JUnit" factoryName="JUnit">
+      <module name="healthtrackerrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.controllers.UserNotesControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.UserNotesControllerTest$ReadNote" />
+      <option name="METHOD_NAME" value="get all notes by user id when no user exists returns 404 response" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest$ReadUsers." type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="healthtrackerrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.controllers.UserControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.UserControllerTest$ReadUsers" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDAOTest$CreateUsers.multiple users added to table can be retrieved successfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="healthtrackerrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.repository.UserDAOTest" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.repository.UserDAOTest$CreateUsers" />
+      <option name="METHOD_NAME" value="multiple users added to table can be retrieved successfully" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserNotesControllerTest$ReadNote" type="JUnit" factoryName="JUnit">
+      <module name="healthtrackerrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.controllers" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.UserNotesControllerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserNotesControllerTest$ReadNote." type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="healthtrackerrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.controllers.UserNotesControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.UserNotesControllerTest$ReadNote" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserNotesControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="healthtrackerrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.controllers" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.UserNotesControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkoutSessionControllerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="healthtrackerrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.controllers" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.WorkoutSessionControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ie.setu in healthtrackerrest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="healthtrackerrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="new" type="JUnit" factoryName="JUnit">
+      <module name="healthtrackerrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.controllers.UserNotesControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.UserNotesControllerTest$ReadNote" />
+      <option name="METHOD_NAME" value="get all notes by user id when no notes exist returns 404 response" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="new2" type="JUnit" factoryName="JUnit">
+      <module name="healthtrackerrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.controllers.UserNotesControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.UserNotesControllerTest$UpdateNotes" />
+      <option name="METHOD_NAME" value="updating a note by note id when it exists, returns 204 response" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="new3" type="JUnit" factoryName="JUnit">
+      <module name="healthtrackerrest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.setu.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.setu.controllers.UserNotesControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="ie.setu.controllers.UserNotesControllerTest$DeleteActivities" />
+      <option name="METHOD_NAME" value="deleting all notes by userid when it exists, returns a 204 response" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ie.setu.AppKt" />
       <module name="healthtrackerrest" />
@@ -58,9 +290,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="deploy-heroku1" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="heroku:deploy" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.new3" />
+      <item itemvalue="JUnit.new2" />
+      <item itemvalue="JUnit.ReadNote" />
+      <item itemvalue="JUnit.UserControllerTest$ReadUsers." />
+      <item itemvalue="JUnit.UserNotesControllerTest$ReadNote" />
+      <item itemvalue="JUnit.UserNotesControllerTest$ReadNote." />
+      <item itemvalue="JUnit.new" />
+      <item itemvalue="JUnit.All in healthtrackerrest" />
+      <item itemvalue="JUnit.UserNotesControllerTest" />
+      <item itemvalue="JUnit.UserDAOTest$CreateUsers.multiple users added to table can be retrieved successfully" />
+      <item itemvalue="JUnit.ie.setu in healthtrackerrest" />
+      <item itemvalue="JUnit.WorkoutSessionControllerTest (1)" />
+      <item itemvalue="Kotlin.AppKt" />
+      <item itemvalue="Maven.deploy-heroku1" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.AppKt" />
+        <item itemvalue="JUnit.UserNotesControllerTest" />
+        <item itemvalue="JUnit.ie.setu in healthtrackerrest" />
+        <item itemvalue="JUnit.UserDAOTest$CreateUsers.multiple users added to table can be retrieved successfully" />
+        <item itemvalue="JUnit.WorkoutSessionControllerTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -73,8 +350,282 @@
       <option name="presentableId" value="Default" />
       <updated>1664875110157</updated>
       <workItem from="1664875112610" duration="10316000" />
-      <workItem from="1665402872301" duration="4115000" />
+      <workItem from="1665402872301" duration="12563000" />
+      <workItem from="1665757864716" duration="1116000" />
+      <workItem from="1665770836176" duration="2852000" />
+      <workItem from="1665775335016" duration="501000" />
+      <workItem from="1665775900718" duration="7220000" />
+      <workItem from="1665827174686" duration="3819000" />
+      <workItem from="1665845476720" duration="15066000" />
+      <workItem from="1666004890055" duration="14521000" />
+      <workItem from="1666028334433" duration="1647000" />
+      <workItem from="1666030309280" duration="5445000" />
+      <workItem from="1666083205501" duration="15703000" />
+      <workItem from="1666111406808" duration="278000" />
+      <workItem from="1666115766975" duration="601000" />
+      <workItem from="1666117048050" duration="1065000" />
+      <workItem from="1666462175248" duration="3481000" />
+      <workItem from="1666467154539" duration="84000" />
+      <workItem from="1666467266895" duration="244000" />
+      <workItem from="1666474088806" duration="82000" />
+      <workItem from="1666475726000" duration="690000" />
+      <workItem from="1666476650997" duration="371000" />
+      <workItem from="1666517523449" duration="618000" />
+      <workItem from="1666671254211" duration="64000" />
+      <workItem from="1666671371257" duration="1550000" />
+      <workItem from="1666672986600" duration="5330000" />
+      <workItem from="1666766401183" duration="3264000" />
+      <workItem from="1667024601040" duration="4875000" />
+      <workItem from="1667124594058" duration="11584000" />
+      <workItem from="1667287511317" duration="2212000" />
+      <workItem from="1667289776125" duration="21704000" />
+      <workItem from="1667324258877" duration="10916000" />
+      <workItem from="1667372143572" duration="11393000" />
+      <workItem from="1667419835096" duration="8973000" />
+      <workItem from="1667457617103" duration="10632000" />
+      <workItem from="1667471775015" duration="10140000" />
+      <workItem from="1667486845738" duration="6142000" />
+      <workItem from="1667495835325" duration="5294000" />
+      <workItem from="1667503004638" duration="1875000" />
+      <workItem from="1667507406867" duration="4505000" />
+      <workItem from="1667544069506" duration="2122000" />
+      <workItem from="1667546258512" duration="6602000" />
+      <workItem from="1667553083587" duration="3717000" />
+      <workItem from="1667557265509" duration="16320000" />
+      <workItem from="1667582478589" duration="7462000" />
+      <workItem from="1667630258171" duration="18388000" />
+      <workItem from="1667654544979" duration="15501000" />
+      <workItem from="1667684185144" duration="982000" />
+      <workItem from="1667730010166" duration="7035000" />
+      <workItem from="1667900762469" duration="6681000" />
+      <workItem from="1671310040986" duration="2637000" />
+      <workItem from="1671359078719" duration="6306000" />
+      <workItem from="1671375035695" duration="29000" />
+      <workItem from="1671375106922" duration="689000" />
+      <workItem from="1671376743462" duration="245000" />
+      <workItem from="1671377931817" duration="8257000" />
+      <workItem from="1671446044831" duration="2558000" />
+      <workItem from="1671449716454" duration="3795000" />
+      <workItem from="1671461839306" duration="1816000" />
+      <workItem from="1671465183612" duration="6077000" />
+      <workItem from="1671474659131" duration="454000" />
+      <workItem from="1671479553300" duration="14000" />
+      <workItem from="1671541035644" duration="3795000" />
+      <workItem from="1671615121739" duration="1988000" />
+      <workItem from="1671625597507" duration="3398000" />
+      <workItem from="1671693549201" duration="4349000" />
+      <workItem from="1671781006250" duration="15302000" />
+      <workItem from="1671866851919" duration="11495000" />
+      <workItem from="1671966444611" duration="21000" />
+      <workItem from="1671979293887" duration="632000" />
+      <workItem from="1671982714634" duration="941000" />
+      <workItem from="1671991828600" duration="805000" />
+      <workItem from="1671998333200" duration="1057000" />
+      <workItem from="1672040485285" duration="382000" />
+      <workItem from="1672057622455" duration="270000" />
+      <workItem from="1672064034281" duration="710000" />
+      <workItem from="1672068230877" duration="265000" />
+      <workItem from="1672069481482" duration="336000" />
+      <workItem from="1672069983707" duration="651000" />
+      <workItem from="1672070684913" duration="227000" />
+      <workItem from="1672070934163" duration="161000" />
+      <workItem from="1672073770850" duration="66000" />
+      <workItem from="1672073886949" duration="682000" />
+      <workItem from="1672078662938" duration="792000" />
+      <workItem from="1672086856415" duration="1909000" />
+      <workItem from="1672128253650" duration="1837000" />
+      <workItem from="1672153811624" duration="6141000" />
+      <workItem from="1672168334160" duration="987000" />
+      <workItem from="1672172443650" duration="560000" />
+      <workItem from="1672179960981" duration="1804000" />
+      <workItem from="1672183126118" duration="1896000" />
+      <workItem from="1672216713256" duration="310000" />
+      <workItem from="1672218077071" duration="5481000" />
+      <workItem from="1672240203827" duration="24000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1665415786930</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665415786930</updated>
+    </task>
+    <task id="LOCAL-00002" summary="creating features/harsha">
+      <created>1665416330168</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665416330168</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added end points and impl (get,patch,delete) for lab04">
+      <created>1665424127057</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665424127057</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Deploy app on heroku">
+      <created>1665784193673</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665784193674</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fetch users from remote DB">
+      <created>1665830800982</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665830800982</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added swagger documentation">
+      <created>1666671692177</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666671692177</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Full CRUD test coverage">
+      <created>1666675431578</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666675431579</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Full HealthTrackerController coverage without activities">
+      <created>1667136464615</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667136464615</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Full HealthTrackerController coverage with activities">
+      <created>1667384081050</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667384081050</updated>
+    </task>
+    <task id="LOCAL-00010" summary="refactored healthtracker controller,Test added workout feature">
+      <created>1667464088682</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1667464088682</updated>
+    </task>
+    <task id="LOCAL-00011" summary="completed workout feature with testing">
+      <created>1667544481726</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667544481726</updated>
+    </task>
+    <task id="LOCAL-00012" summary="completed workout feature with testing">
+      <created>1667544926902</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667544926902</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fixed workoutDAOTest">
+      <created>1667549656367</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667549656367</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixed controller test,DAO test">
+      <created>1667558917394</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667558917394</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added new feature workout session">
+      <created>1667572526359</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1667572526360</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added new feature user notes">
+      <created>1667671397881</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1667671397884</updated>
+    </task>
+    <task id="LOCAL-00017" summary="refactored and deployed">
+      <created>1667684998006</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1667684998006</updated>
+    </task>
+    <task id="LOCAL-00018" summary="checked">
+      <created>1667735636122</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1667735636123</updated>
+    </task>
+    <task id="LOCAL-00019" summary="deploy on railway">
+      <created>1667914878621</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1667914878621</updated>
+    </task>
+    <task id="LOCAL-00020" summary="deploy on railway">
+      <created>1667915101445</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1667915101445</updated>
+    </task>
+    <task id="LOCAL-00021" summary="deploy on railway1">
+      <created>1667918768760</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1667918768760</updated>
+    </task>
+    <task id="LOCAL-00022" summary="new branch">
+      <created>1671313118826</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1671313118826</updated>
+    </task>
+    <task id="LOCAL-00023" summary="updated with dokka code">
+      <created>1671378134843</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1671378134843</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Basic vue code">
+      <created>1671388907260</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1671388907260</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Basic vue code readded">
+      <created>1671462128683</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1671462128683</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Basic vue code re-added">
+      <created>1671462989770</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1671462989770</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,7 +639,18 @@
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
-                  <entry key="Show.Git.Branches" value="false" />
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>
@@ -96,5 +658,147 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <MESSAGE value="creating features/harsha" />
+    <MESSAGE value="added end points and impl (get,patch,delete) for lab04" />
+    <MESSAGE value="Deploy app on heroku" />
+    <MESSAGE value="Fetch users from remote DB" />
+    <MESSAGE value="clean code without swagger" />
+    <MESSAGE value="Added swagger documentation" />
+    <MESSAGE value="Full CRUD test coverage" />
+    <MESSAGE value="Full HealthTrackerController coverage without activities" />
+    <MESSAGE value="Full HealthTrackerController coverage with activities" />
+    <MESSAGE value="refactored healthtracker controller,Test added workout feature" />
+    <MESSAGE value="completed workout feature with testing" />
+    <MESSAGE value="fixed workoutDAOTest" />
+    <MESSAGE value="fixed controller test,DAO test" />
+    <MESSAGE value="added new feature workout session" />
+    <MESSAGE value="added new feature user notes" />
+    <MESSAGE value="refactored and deployed" />
+    <MESSAGE value="checked" />
+    <MESSAGE value="deploy on railway" />
+    <MESSAGE value="deploy on railway1" />
+    <MESSAGE value="new branch" />
+    <MESSAGE value="updated with dokka code" />
+    <MESSAGE value="Basic vue code" />
+    <MESSAGE value="Basic vue code readded" />
+    <MESSAGE value="Basic vue code re-added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic vue code re-added" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/ie/setu/controllers/UserNotesControllerTest.kt</url>
+          <line>227</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>91</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>92</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>93</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>94</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>96</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>95</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>97</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>99</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>100</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>104</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>105</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ie/setu/controllers/UserNotesController.kt</url>
+          <line>90</line>
+          <properties class="ie.setu.controllers.UserNotesController" method="getNotesByUserId">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/healthtrackerrest$WorkoutSessionDAOTest.ic" NAME="WorkoutSessionDAOTest Coverage Results" MODIFIED="1667557484605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ie.setu.domain.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/healthtrackerrest$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1667551386216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ie.setu.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/healthtrackerrest$UserDAOTest.ic" NAME="UserDAOTest Coverage Results" MODIFIED="1667554515380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ie.setu.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/healthtrackerrest$WorkoutControllerTest.ic" NAME="WorkoutControllerTest Coverage Results" MODIFIED="1667552103209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ie.setu.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/healthtrackerrest$ActivityControllerTest.ic" NAME="ActivityControllerTest Coverage Results" MODIFIED="1667551275655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ie.setu.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/healthtrackerrest$ActivityDAOTest.ic" NAME="ActivityDAOTest Coverage Results" MODIFIED="1667554549868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ie.setu.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/healthtrackerrest$OverallCoverage.ic" NAME="OverallCoverage Coverage Results" MODIFIED="1667552699329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ie.setu.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/healthtrackerrest$ie_setu_controllers_in_healthtrackerrest.ic" NAME="ie.setu.controllers in healthtrackerrest Coverage Results" MODIFIED="1667666539088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ie.setu.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/healthtrackerrest$WorkoutDAOTest.ic" NAME="WorkoutDAOTest Coverage Results" MODIFIED="1667553903700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ie.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/healthtrackerrest$ActivityDAOTest_CreateActivities_multiple_activity_added_to_table_can_be_retrieved_successfully.ic" NAME="ActivityDAOTest$CreateActivities.multiple activity added to table can be retrieved successfully Coverage Results" MODIFIED="1667305647294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ie.setu.repository.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/healthtrackerrest$ie_setu_in_healthtrackerrest.ic" NAME="ie.setu in healthtrackerrest Coverage Results" MODIFIED="1672156793376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ie.setu.*</FILTER>
+    </SUITE>
   </component>
 </project>

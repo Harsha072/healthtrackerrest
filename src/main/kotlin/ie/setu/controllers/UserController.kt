@@ -21,6 +21,7 @@ object UserController {
         responses = [OpenApiResponse("200", [OpenApiContent(Array<User>::class)])]
     )
     fun getAllUsers(ctx: Context) {
+        println(ctx.path())
         val users = userDao.getAll()
         if (users.size != 0) {
             ctx.status(200)
@@ -60,6 +61,7 @@ object UserController {
         responses  = [OpenApiResponse("200")]
     )
     fun addUser(ctx: Context) {
+        println("add user:::"+ctx.path())
         val user : User = jsonToObject(ctx.body())
         val userId = userDao.save(user)
         if (userId != null) {
@@ -75,7 +77,7 @@ object UserController {
         tags = ["User"],
         path = "/api/users/email/{email}",
         method = HttpMethod.GET,
-        pathParams = [OpenApiParam("email", Int::class, "The user email")],
+        pathParams = [OpenApiParam("email", String::class, "The user email")],
         responses  = [OpenApiResponse("200", [OpenApiContent(User::class)])]
     )
     fun getUserByEmail(ctx: Context) {
@@ -115,6 +117,7 @@ object UserController {
         responses  = [OpenApiResponse("204")]
     )
     fun updateUser(ctx: Context){
+        println("update user::::  "+ctx.path())
         val foundUser : User = jsonToObject(ctx.body())
         if ((userDao.update(id = ctx.pathParam("user-id").toInt(), user=foundUser)) != 0)
             ctx.status(204)

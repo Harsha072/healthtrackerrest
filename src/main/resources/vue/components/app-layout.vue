@@ -36,7 +36,7 @@
 </template>
 
 <script>
-Vue.component("app-layout", {template: "#app-layout"});
+Vue.component("app-layout", {template: `#app-layout`});
 </script>
 
 <style>

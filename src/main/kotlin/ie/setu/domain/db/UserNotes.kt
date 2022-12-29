@@ -9,7 +9,7 @@ import org.jetbrains.exposed.sql.Table
 object UserNotes : Table("notes") {
     val id = integer("id").autoIncrement().primaryKey()
     val title = varchar("title", 100)
-    val text = varchar("text", 255)
+    val noteText = varchar("note_text", 255)
     val shared = varchar("shared", 255)
     val userId = integer("user_id").references(Users.id, onDelete = ReferenceOption.CASCADE)
 }

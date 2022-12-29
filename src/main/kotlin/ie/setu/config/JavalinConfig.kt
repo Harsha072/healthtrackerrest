@@ -21,6 +21,7 @@ class JavalinConfig {
             //added this jsonMapper for our integration tests - serialise objects to json
             it.jsonMapper(JavalinJackson(jsonObjectMapper()))
             it.enableWebjars()
+            it.enableCorsForOrigin("http://localhost:8080")
         }.apply {
             exception(Exception::class.java) { e, _ -> e.printStackTrace() }
             error(404) { ctx -> ctx.json("404 - Not Found") }
@@ -43,10 +44,11 @@ class JavalinConfig {
             // The @routeComponent that we added in layout.html earlier will be replaced
             // by the String inside of VueComponent. This means a call to / will load
             // the layout and display our <home-page> component.
-            get("/", VueComponent("<home-page></home-page>"))
-            get("/users", VueComponent("<user-overview></user-overview>"))
-            get("/users/{user-id}", VueComponent("<user-profile></user-profile>"))
-            get("/users/{user-id}/activities", VueComponent("<user-activity-overview></user-activity-overview>"))
+//            get("/", VueComponent("<home-page></home-page>"))
+//            get("/users", VueComponent("<user-overview></user-overview>"))
+//            get("/activities", VueComponent("<activity-overview></activity-overview>"))
+//            get("/users/{user-id}", VueComponent("<user-profile></user-profile>"))
+//            get("/users/{user-id}/activities", VueComponent("<user-activity-overview.vue></user-activity-overview.vue>"))
             path("/api/users") {
                 get(UserController::getAllUsers)
                 post(UserController::addUser)
